@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resident Dashboard</title>
+    <title>Complaints and Service Requests</title>
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
@@ -25,29 +25,52 @@
     <div class="main-content">
         <header>
             <div class="header-title">
-                <h1>Welcome to Your Dashboard</h1>
+                <h1>Complaints and Service Requests</h1>
             </div>
             <div class="user-profile">
                 <i class="fas fa-user"></i>
                 <span>User Name</span>
             </div>
         </header>
-        <div class="content">
-            <div class="card">
-                <h3>Card Title</h3>
-                <p>Card content goes here...</p>
+        <div class="forms-column">
+            <form id="complaint-form" action="#" method="post">
+                <h3>Submit a Complaint</h3>
+                <label for="complaint-name">Enter Your Name</label>
+                <input type="text" id="complaint-name" name="complaint-name" required>
+
+                <label for="complaint-text">Complaint</label>
+                <textarea id="complaint-text" name="complaint-text" rows="4" required></textarea>
+
+                <input type="submit" value="Submit Complaint">
+            </form>
+
+            <form id="service-request-form" action="#" method="post">
+                <h3>Submit a Service Request</h3>
+                <label for="request-name">Enter Your Name</label>
+                <input type="text" id="request-name" name="request-name" required>
+
+                <label for="request-text">Service Request</label>
+                <textarea id="request-text" name="request-text" rows="4" required></textarea>
+
+                <input type="submit" value="Submit Service Request">
+            </form>
+        </div>
+
+        <div class="complaints-section">
+            <h2>Complaints</h2>
+            <div id="complaints-list" class="entry-list">
+                <!-- Complaints will be displayed here dynamically -->
             </div>
-            <div class="card">
-                <h3>Card Title</h3>
-                <p>Card content goes here...</p>
-            </div>
-            <div class="card">
-                <h3>Card Title</h3>
-                <p>Card content goes here...</p>
+        </div>
+
+        <div class="service-requests-section">
+            <h2>Service Requests</h2>
+            <div id="service-requests-list" class="entry-list">
+                <!-- Service requests will be displayed here dynamically -->
             </div>
         </div>
     </div>
 
-    <script src="js/dashboard.js"></script>
+    <script src="js/c-and-s.js"></script>
 </body>
 </html>
