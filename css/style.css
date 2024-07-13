@@ -336,7 +336,7 @@ a:focus {
 }
 
 .slider_section .detail-box .inner_detail-box {
-  background-color: rgba(58, 63, 88, 0.8);
+  background-color: rgba(58, 63, 88, 0.48);
   color: #ffffff;
   padding: 45px;
   border-radius: 5px;
