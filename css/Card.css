@@ -1,0 +1,227 @@
+/* Imports the Poppins font family from Google Fonts with all available weights and styles. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Global styles that apply to all elements on the page. */
+* {
+    margin: 0; /* Resets the margin to ensure consistent spacing. */
+    padding: 0; /* Resets the padding for a clean start. */
+    box-sizing: border-box; /* Ensures padding and border are included in the total width and height. */
+    font-family: "Poppins", sans-serif; /* Sets the default font family to Poppins. */
+    outline: none; /* Removes the default outline on focus for inputs and buttons. */
+    border: none; /* Removes the default borders. */
+    text-transform: uppercase; /* Transforms all text to uppercase for stylistic consistency. */
+}
+
+/* Styles specific to elements with the 'block' class. */
+.block {
+    display: grid; /* Utilizes CSS Grid for layout. */
+    grid-template-columns: repeat(auto-fit, minmax(160px, auto)); /* Creates a responsive grid with columns of at least 160px wide. */
+    gap: 3rem; /* Sets the gap between grid items. */
+}
+
+/* Defines CSS custom properties (variables) for use throughout the stylesheet. */
+:root {
+    --main-color: rgb(106, 169, 218); /* Primary color for the site. */
+    --hover-color: rgb(251, 97, 122); /* Hover state color for interactive elements. */
+    --text-color: black; /* Default text color. */
+    --ash-color: #f3f4f6; /* Light grey color, typically used for backgrounds. */
+    --bg-color: white; /* Default background color. */
+    --box-shadow: 2px 2px 10px 4px rgb(14 55 54 / 13%); /* Shadow effect for elevating elements. */
+}
+
+/* Styles for elements with the 'container' class. */
+.container {
+    min-height: 100vh; /* Ensures the container takes up at least the full height of the viewport. */
+    background: white; /* Sets the background color to white. */
+    display: flex; /* Enables Flexbox layout. */
+    align-items: center; /* Centers items vertically. */
+    justify-content: center; /* Centers items horizontally. */
+    flex-flow: column; /* Stacks items in a vertical column. */
+    padding-bottom: 60px; /* Adds spacing at the bottom. */
+}
+
+/* Additional styling for form elements within a container. */
+.container form {
+    background: #fff; /* Sets the background color to white. */
+    border-radius: 5px; /* Rounds the corners of the form. */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .1); /* Adds a subtle shadow for depth. */
+    padding: 20px; /* Adds padding inside the form. */
+    width: 600px; /* Sets a fixed width for the form. */
+    padding-top: 160px; /* Adds additional padding at the top. */
+}
+
+/* Styles for input box wrappers inside the form. */
+.container form .inputBox {
+    margin-top: 20px; /* Adds space above each input box. */
+    pointer-events: auto; /* Ensures the input boxes are clickable and focusable. */
+}
+
+/* Styling for labels inside input boxes. */
+.container form .inputBox span {
+    display: block; /* Renders the span as a block-level element. */
+    color: #999; /* Sets the text color to a light grey. */
+    padding-bottom: 5px; /* Adds spacing below the label. */
+}
+
+/* Common styling for input and select elements in the form. */
+.container form .inputBox input,
+.container form .inputBox select {
+    width: 100%; /* Makes the input/select elements fill their container's width. */
+    padding: 10px; /* Adds padding for better readability and usability. */
+    border-radius: 10px; /* Rounds the corners. */
+    border: 1px solid rgba(0, 0, 0, .3); /* Sets the border color and width. */
+    color: #444; /* Sets the text color to a dark grey. */
+}
+
+/* Flexbox layout for groups of input fields, allowing for a responsive design. */
+.container form .flexbox {
+    display: flex; /* Enables Flexbox layout. */
+    gap: 15px; /* Adds space between flex items. */
+}
+
+/* Sets the basis for flex items within a flexbox container, allowing them to grow and shrink. */
+.container form .flexbox .inputBox {
+    flex: 1 1 150px; /* Allows the box to grow and shrink with a base width of 150px. */
+}
+
+/* Styling for the submit button in the form. */
+.container form .submit-btn {
+    width: 100%; /* Makes the button fill its container's width. */
+    background: linear-gradient(45deg, blueviolet, var(--main-color)); /* Adds a gradient background. */
+    margin-top: 20px; /* Adds space above the button. */
+    padding: 10px; /* Adds padding inside the button. */
+    font-size: 20px; /* Increases the font size for better visibility. */
+    color: #fff; /* Sets the text color to white. */
+    border-radius: 20px; /* Rounds the corners of the button. */
+    cursor: pointer; /* Changes the cursor to indicate the button is clickable. */
+    transition: .2s linear; /* Adds a transition effect for hover state changes. */
+}
+
+/* Hover state styling for the submit button. */
+.container form .submit-btn:hover {
+    letter-spacing: 2px; /* Increases spacing between letters. */
+    opacity: .8; /* Makes the button slightly transparent. */
+}
+
+/* Styles specific to the card container, setting its position, size, and appearance. */
+.container .card-container {
+    margin-bottom: -150px; /* Negatively offsets the container from the bottom, pulling it upwards. */
+    position: relative; /* Sets the positioning context for absolutely positioned child elements. */
+    height: 250px; /* Sets a fixed height. */
+    width: 400px; /* Sets a fixed width. */
+}
+
+/* Styling for the front of the card, including background, size, position, and visual effects. */
+.container .card-container .front {
+    position: absolute; /* Positions the front of the card absolutely within its parent container. */
+    height: 100%; /* Fills the height of the parent container. */
+    width: 100%; /* Fills the width of the parent container. */
+    top: 0; /* Aligns the top edge with the parent container's top edge. */
+    left: 0; /* Aligns the left edge with the parent container's left edge. */
+    background: linear-gradient(45deg, blueviolet, var(--main-color)); /* Applies a gradient background. */
+    border-radius: 20px; /* Rounds the corners. */
+    box-shadow: var(--box-shadow); /* Applies a shadow for depth. */
+    padding: 20px; /* Adds padding inside the front of the card. */
+    transition: transform .4s ease-out; /* Smooths the transition for 3D transformations. */
+}
+
+/* Styles for the card number display box within the card visualization. */
+.container .card-container .front .card-number-box{
+    font-size: 20px; /* Sets the size of the font for the card number. */
+    margin: 5% 0; /* Adds a top and bottom margin as a percentage of the container's width for vertical spacing. */
+    color: white; /* Sets the text color to white for visibility against the card's background. */
+}
+
+/* Styles for the container that holds the card chip and Visa logo images. */
+.container .card-container .front .image{
+    display: flex; /* Enables Flexbox for a linear, flexible layout of child elements. */
+    align-items: center; /* Vertically centers the items in the container. */
+    justify-content: space-between; /* Spaces out the child items evenly across the container's main axis. */
+    padding-top: 10px; /* Adds padding on top for spacing from the container's edge. */
+}
+
+/* Specific styles for the card chip image to position and size it appropriately. */
+.container .card-container .front .image #chip{
+    margin-top: -35px; /* Negatively offsets the top margin to pull the image upwards for visual alignment. */
+    height: 60px; /* Specifies the height of the chip image. */
+    width: 75px; /* Specifies the width of the chip image. */
+}
+
+/* Specific styles for the Visa logo image to define its size. */
+.container .card-container .front .image #visa{
+    height: 80px; /* Sets the height of the Visa logo. */
+    width: 140px; /* Sets the width of the Visa logo. */
+}
+
+/* This selector seems to be targeting an element 'im', which might be a typo or incorrect. */
+.container .card-container .front .image im{
+    height: 50px; /* Sets the height for the specified elements, but the selector may need correction. */
+}
+
+/* Styles for a generic box within the card visualization, possibly for additional information or elements. */
+.container .card-container .front .card-container-box{
+    padding: 30px; /* Adds padding around the content within the box for spacing. */
+    font-size: 22px; /* Sets the font size larger for emphasis or readability. */
+    color: #fff; /* Sets the text color to white for visibility. */
+}
+
+/* Establishes a Flexbox container for layout purposes within the card visualization. */
+.container .card-container .front .flexbox{
+    display: flex; /* Activates Flexbox for a flexible, linear layout of child elements. */
+}
+
+/* Targets the first child box within the flex container to apply specific styling. */
+.container .card-container .front .flexbox .box:nth-child(1){
+    margin-right: auto; /* Automatically adjusts the right margin to push other elements to the end of the flex container. */
+}
+
+/* Styles for boxes within the flex container, specifying font size and color. */
+.container .card-container .front .flexbox .box{
+    font-size: 15px; /* Sets a smaller font size for text within these boxes. */
+    color: #fff; /* Sets text color to white for visibility against the card background. */
+}
+
+
+
+/* Styles for the receipt container, including layout, size, and visual appearance. */
+.receipt-container {
+    min-height: 70vh; /* Sets a minimum height based on the viewport height. */
+    background: white; /* Sets the background color to white. */
+    display: flex; /* Enables Flexbox layout. */
+    align-items: center; /* Centers items vertically. */
+    justify-content: center; /* Centers items horizontally. */
+    flex-flow: column; /* Arranges items in a vertical column. */
+    padding-bottom: 60px; /* Adds padding at the bottom. */
+    border-radius: 20px; /* Rounds the corners. */
+    box-shadow: var(--box-shadow); /* Applies a shadow for depth. */
+}
+
+/* Styles for individual receipt items, arranging them with Flexbox for a side-by-side layout. */
+.receipt-item {
+    display: flex; /* Enables Flexbox layout. */
+    align-items: center; /* Centers items vertically within each receipt item. */
+    margin-bottom: 20px; /* Adds space below each receipt item. */
+}
+
+/* Styles for the image within a receipt item, including size, layout, and appearance. */
+.receipt-image {
+    flex-shrink: 0; /* Prevents the image from shrinking in the Flexbox layout. */
+    width: 100px; /* Sets a fixed width for the image. */
+    height: 100px; /* Sets a fixed height for the image, maintaining aspect ratio. */
+    display: flex; /* Enables Flexbox layout within the image container. */
+    justify-content: center; /* Centers the image horizontally. */
+    align-items: center; /* Centers the image vertically. */
+    overflow: hidden; /* Hides any overflow, useful for ensuring the image fits within the defined size. */
+}
+
+/* Ensures images within receipt items maintain their aspect ratio without distortion. */
+.receipt-image img {
+    width: 100%; /* Fills the width of its container. */
+    height: 100%; /* Fills the height of its container. */
+    object-fit: contain; /* Maintains the image's aspect ratio, fitting the content within the available space. */
+}
+
+/* Styles for the details section of each receipt item, placing text to the right of the image. */
+.receipt-details {
+    margin-left: 20px; /* Adds space to the left of the details, separating it from the image. */
+}
