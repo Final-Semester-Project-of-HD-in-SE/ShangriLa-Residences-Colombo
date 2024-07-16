@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Profile</title>
+    <link rel="stylesheet" href="css/user-prof.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Resident Profile</h1>
+            <nav>
+                <ul>
+                    <li><a href="user-dash.html">Home</a></li>
+                    <li><a href="#">Issues</a></li>
+                    <li><a href="product.html">Payments</a></li>
+                    <li><a href="#">Visitors</a></li>
+                    <li><a href="#" class="active">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile">
+            <div class="container">
+                <div class="profile-header">
+                    <div class="profile-image">
+                        <img id="profile-pic" src="https://i.ibb.co/8xtYCB4/largImg4.jpg" alt="Profile Picture">
+                        <input type="file" id="profile-pic-input" accept="image/*" onchange="loadFile(event)">
+                    </div>
+                    <div class="profile-info">
+                        <h2>Maleesha</h2>
+                        <p>Resident</p>
+                    </div>
+                </div>
+                <form class="profile-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" value="Randy Maleesha">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" value="RandyMaleesha@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" value="+1234567890">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" value="OneGalleFace, Colombo">
+                    </div>
+                    <button type="submit" class="btn">Save Changes</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 OneGalleFace Apartments. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const loadFile = (event) => {
+            const output = document.getElementById('profile-pic');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = () => {
+                URL.revokeObjectURL(output.src); // free memory
+            }
+        };
+    </script>
+</body>
+</html>
