@@ -99,9 +99,7 @@ const generateReceiptHTML = (orderDetails) => {
           </div>
           <div class="receipt-details" style="margin-left: 20px;">
               <strong>${item.title}</strong><br>
-              Quantity: ${item.quantity}<br>
-              Price: $${item.price.toFixed(2)}<br>
-              Subtotal: $${(item.price * item.quantity).toFixed(2)}
+              Price: $${item.price.toFixed(2)}
           </div>
       </div>
   `).join(''); // Join all item HTML strings into a single string.

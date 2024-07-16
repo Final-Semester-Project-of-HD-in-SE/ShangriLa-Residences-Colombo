@@ -1,0 +1,571 @@
+/* CSS FILE */
+
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Root variables */
+:root {
+    --main-color: #004d7a; /* Changed from rgb(255, 140, 159) */
+    --hover-color: #003c5e; /* Changed from rgb(253, 71, 101) to a darker shade of #004d7a */
+    --text-color:black; /* Define text color variable */
+    --ash-color: #f3f4f6; /* Define ash color variable */
+    --bg-color:white; /* Define background color variable */
+    --box-shadow: 2px 2px 10px 4px rgb(14 55 54/ 13%); /* Define box shadow variable */
+}
+
+/* Text selection */
+*::selection {
+    color:aliceblue; /* Define color for selected text */
+    background-color: #004d7a; /* Changed from rgb(254, 167, 181) */
+
+}
+
+/* Global styles */
+* {
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    text-decoration:none; /* Remove text decoration */
+    list-style: none; /* Remove list styles */
+    scroll-behavior: smooth; /* Smooth scrolling behavior */
+    font-family: "Montserrat", sans-serif; /* Set default font family */
+}
+
+/* --------Navigation Tab-------- */
+/* Header styles */
+header {
+    width: 100%;
+    background-color: #004d7a;
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header h1 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ffcb05;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+}
+
+
+/* Body section */
+body {
+    width:100vw; /* Set width to 100% of viewport width */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
+    flex-direction: column; /* Arrange items in column */
+    background-image: url('image/back.avif'); /* Set background image */
+    background-size: cover; /* Scale background image to cover entire container */
+    background-position: center; /* Position background image at the center */
+    background-attachment: fixed; /* Fix background image, so it doesn't scroll with the content */
+}
+
+/* Cart section */
+.cart {
+    display: flex; /* Use flexbox for layout */
+    background-color: white; /* Set background color */
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Align items vertically */
+    padding: 7px 10px; /* Add padding */
+    border-radius: 3px; /* Add border radius */
+    width: 80px; /* Set width */
+}
+
+/* Font Awesome solid icon */
+.fa-solid {
+    color: #004d7a; /* Changed from rgb(255, 140, 159) */
+}
+
+/* Cart paragraph */
+.cart p {
+    height: 22px; /* Set height */
+    width: 22px; /* Set width */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
+    border-radius: 22px; /* Add border radius */
+    background-color: #004d7a; /* Changed from rgb(255, 140, 159) */
+    color: white; /* Set color */
+}
+/* Container */
+.container {
+    width: 100%; /* Set width to 100% */
+    display: grid;
+    grid-template-columns: 2fr  1fr; /* distribute into 4 columns */
+    grid-template-rows: auto; /* let the rows adjust to content height */
+    gap:15px; /* add gap between grid items */
+    margin-bottom: 1px; /* Add margin */
+    padding-left: 5px;
+}
+
+/* Container 2 */
+.container2 {
+    width: 100%; /* Set width to 100% */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* distribute into 4 columns */
+    grid-template-rows: auto; /* let the rows adjust to content height */
+    gap: 13px; /* add gap between grid items */
+}
+
+
+/* Root */
+#root {
+    padding-left: 20px;
+    width: 100%; /* Set width to 100% */
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Define grid columns */
+    grid-gap: 25px; /* Set grid gap */
+    width: 100%; /* Set width to 100% */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Set flex direction to column */
+}
+
+#root h2 {
+    color: grey; /* Set color using variable */
+    padding-top: 50px;
+    margin-bottom: 20px; /* Add bottom margin */
+    font-size: 20px; /* Set font size */
+}
+
+#root h4 {
+    color: red; /* Set color using variable */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 93%; /* Set width */
+    border-radius: 5px; /* Add border radius */
+    background-color: #f3f4f6; /* Set background color */
+    margin-left: 20px; /* Add left margin */
+    padding: 15px; /* Add padding */
+    text-align: center; /* Center text */
+    background-color: rgba(243, 244, 246, 0.6); /* Adjust the RGB values and opacity to your preference */
+    border-radius: 15px; /* Add border radius */
+
+}
+
+
+/* Header */
+.head {
+    background-color: #004d7a; /* Changed from rgb(255, 140, 159) */
+    border-radius: 3px; /* Add border radius */
+    height: 40px; /* Set height */
+    padding: 10px; /* Add padding */
+    margin-bottom: 20px; /* Add bottom margin */
+    color: white; /* Set text color */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+}
+
+/* Footer */
+.foot {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Distribute space between items */
+    margin: 20px 0px; /* Add margin */
+    padding: 10px 0px; /* Add padding */
+    border-top: 1px solid #004d7a; /* Changed from rgb(255, 140, 159) */
+}
+
+/* Box */
+.box {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Set flex direction to column */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Distribute space between items */
+    border: 1px solid #004d7a; /* Changed from rgb(255, 140, 159) */
+    border-radius: 5px; /* Add border radius */
+    padding: 15px; /* Add padding */
+    background-color: rgba(243, 244, 246, 0.4); /* Adjust the RGB values and opacity to your preference */
+    border-radius: 35px; /* Add border radius */
+}
+
+
+/* Image Box */
+.img-box {
+    width: 100%; /* Set width to 100% */
+    height: 550px; /* Increased height */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+/* Images */
+.images {
+    max-width: 95%; /* Increased maximum width */
+    max-height: 95%; /* Increased maximum height */
+    object-fit: cover; /* Set object fit */
+    object-position: center; /* Set object position */
+    border-radius: 20px; /* Add curved borders */
+}
+
+/* Bottom section */
+.bottom {
+    margin-top: 20px; /* Add top margin */
+    width: 100%; /* Set width to 100% */
+    text-align: center; /* Center text */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Set flex direction to column */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Distribute space between items */
+    height: 110px; /* Set height */
+}
+
+/* H2 */
+h2 {
+    font-size: 17px; /* Set font size */
+    color: red; /* Set text color */
+}
+
+/* Button styling */
+button {
+    width: 100%; /* Set width to 100% */
+    position: relative; /* Set position to relative */
+    border: none; /* Remove border */
+    border-radius: 70px; /* Add border radius */
+    background-color: #004d7a; /* Changed from rgb(255, 140, 159) */
+    padding: 7px 25px; /* Add padding */
+    cursor: pointer; /* Set cursor to pointer */
+    color: white; /* Set text color */
+    /* Neumorphism Effect */
+    box-shadow: 5px 5px 15px #c3c3c3, 
+                -5px -5px 15px #ffffff; /* Set box shadow */
+    transition: all 0.3s ease; /* Add transition effect */
+
+    /* This code is creating a neumorphic effect, which is a design trend that gives elements a soft, extruded look. Here's what each part of the code does:
+
+    box-shadow: 5px 5px 15px #c3c3c3, -5px -5px 15px #ffffff;
+    This line creates the neumorphic shadow effect. It sets two shadow layers, one with a darker color #c3c3c3 on the bottom right, and one with a lighter color #ffffff on the top left. The 5px and 15px values control the position and spread of the shadows.
+
+    transition: all 0.3s ease;
+    This line adds a transition effect to all properties, making any changes to those properties occur smoothly over a duration of 0.3s, with an easing function that gives the effect a smooth acceleration and deceleration.
+
+    When this code is applied to an element, it creates a neumorphic effect by giving the element a soft, extruded appearance with the specified box shadow and a smooth transition effect for a better user experience. */
+}
+
+/* Hover effect on button */
+button:hover {
+    background-color: #003c5e; /* Changed from lightpink to a darker shade of #004d7a */
+    /* Neumorphism Effect on hover */
+    box-shadow: 5px 5px 15px #c3c3c3, 
+                -5px -5px 15px #ffffff, 
+                inset 5px 5px 15px #c3c3c3, 
+                inset -5px -5px 15px #ffffff; /* Set box shadow on hover */
+
+    /* box-shadow: 
+    The box-shadow property is used to add shadow effects around an element's frame.
+
+    - 5px 5px 15px #c3c3c3, 
+    This represents the first shadow effect. The values "5px 5px" define the horizontal and vertical offset of the shadow from the element. The "15px" represents the blur radius of the shadow, and "#c3c3c3" represents the color of the shadow.
+
+    - 5px -5px 15px #ffffff, 
+    This represents the second shadow effect. The negative values (-5px -5px) indicate that the shadow is positioned in the opposite direction, and the color "#ffffff" creates a lighter effect.
+
+    - inset 5px 5px 15px #c3c3c3, 
+    The "inset" keyword sets this shadow to be an inner shadow, i.e., it is positioned inside the element. The rest of the values are similar to the first shadow effect.
+
+    - inset -5px -5px 15px #ffffff; 
+    This represents the fourth effect, similar to the second shadow effect but with an inset position. */
+}
+
+/* Cart item */
+.cart-item {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Distribute space between items */
+    padding: 10px; /* Add padding */
+    background-color: white; /* Set background color */
+    border-bottom: 1px solid #aaa; /* Add bottom border */
+    border-radius: 3px; /* Add border radius */
+    margin: 10px 10px; /* Add margin */
+    background-color: rgba(255, 255, 255, 0.4); /* Adjust the last value for opacity */
+    border-radius: 15px; /* Add border radius */
+
+}
+
+
+/* Row image */
+.row-img {
+    width: 50px; /* Set width */
+    height: 50px; /* Set height */
+    border-radius: 50px; /* Add border radius */
+    border: 1px solid #004d7a; /* Changed from rgb(255, 140, 159) */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+/* Row image element */
+.rowimg {
+    max-width: 43px; /* Set maximum width */
+    max-height: 43px; /* Set maximum height */
+    border-radius: 50%; /* Add border radius */
+}
+
+/* Trash icon */
+.bx-trash {
+    cursor: pointer; /* Set cursor to pointer */
+    color: #333; /* Set color */
+    font-size: 20px; /* Set font size */
+    transition: all 0.3s ease; /* Add transition effect */
+}
+
+/* Hover effect on trash icon */
+.bx-trash:hover {
+    color: red; /* Change color on hover */
+}
+
+/* Delivery Form */
+.delivery-form {
+    width: 95%; /* Set width to 95% */
+    margin: 20px 0; /* Add margin */
+    padding: 20px; /* Add padding */
+    box-shadow: var(--box-shadow); /* Add box shadow */
+    background-color: var(--bg-color); /* Set background color */
+    background-color: rgba(243, 244, 246, 0.6); /* Adjust the RGB values and opacity to your preference */
+    border-radius: 25px; /* Add border radius */
+}
+
+/* Contact Form */
+.contact-form h2 {
+    color: var(--main-color); /* Set color using variable */
+    margin-bottom: 20px; /* Add bottom margin */
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 15px; /* Add bottom margin */
+}
+
+/* Form group label */
+.form-group label {
+    display: block; /* Display as block */
+    margin-bottom: 5px; /* Add bottom margin */
+}
+
+/* Form input fields */
+.form-group input[type="email"],
+.form-group input[type="address"],
+.form-group input[type="Name"],
+.form-group textarea {
+    width: 100%; /* Set width to 100% */
+    padding: 8px; /* Add padding */
+    border-radius: 5px; /* Add border radius */
+    border: 1px solid #ccc; /* Add border */
+    box-sizing: border-box; /* Set box sizing */
+    background-color: rgba(243, 244, 246, 0.9); /* Adjust the RGB values and opacity to your preference */
+
+}
+
+/* Checkbox group */
+.checkbox-group {
+    margin-bottom: 20px; /* Add bottom margin */
+}
+
+.checkbox-group div {
+    margin-bottom: 10px; /* Add bottom margin */
+}
+
+/* Button type submit */
+button[type="submit"] {
+    background-color: var(--main-color); /* Set background color */
+    color: white; /* Set text color */
+    padding: 10px 15px; /* Add padding */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Set cursor to pointer */
+    transition: background-color 0.3s ease; /* Add transition effect */
+}
+
+/* Hover effect on submit button */
+button[type="submit"]:hover {
+    background-color: var(--hover-color); /* Change background color on hover */
+}
+
+/* Form buttons */
+.form-buttons {
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 10px; /* Set gap between buttons */
+}
+
+/* Button styling */
+.btn {
+    padding: 8px 12px; /* Add padding */
+    font-size: 0.9rem; /* Set font size */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Set cursor to pointer */
+    transition: background-color 0.3s ease; /* Add transition effect */
+    color: white; /* Set text color */
+}
+
+/* Confirm button */
+.btn.confirm {
+    background-color: var(--main-color); /* Set background color */
+}
+
+/* Hover effect on confirm button */
+.btn.confirm:hover {
+    background-color: var(--hover-color); /* Change background color on hover */
+}
+
+/* Clear button */
+.btn.clear {
+    background-color: #b7b6b6; /* Set background color */
+}
+
+/* Hover effect on clear button */
+.btn.clear:hover {
+    background-color: #bbbbbb; /* Change background color on hover */
+}
+
+/* Footer */
+.footer {
+    background-color: #004d7a;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    width: 100vw
+}
+
+/* Footer info */
+.footer-info {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(160px, auto)); /* Define grid columns */
+    gap: 3rem; /* Set gap between grid items */
+}
+
+/* First info */
+.first-info img {
+    width: 140px; /* Set width */
+    height: auto; /* Set height to auto */
+}
+
+/* Footer info heading */
+.footer-info h4 {
+    color: #212529; /* Set color */
+    font-size: 14px; /* Set font size */
+    text-transform: uppercase; /* Transform text to uppercase */
+    margin-bottom: 10px; /* Add bottom margin */
+}
+
+/* Footer info paragraph */
+.footer-info p {
+    color: #565656; /* Set color */
+    font-size: 14px; /* Set font size */
+    font-weight: 480; /* Set font weight */
+    text-transform: capitalize; /* Transform text to capitalize */
+    line-height: 1.5; /* Set line height */
+    margin-bottom: 10px; /* Add bottom margin */
+    cursor: pointer; /* Set cursor to pointer */
+    transition: all .42s; /* Add transition effect */
+}
+
+/* Footer info text */
+.footer-info text {
+    color: #565656; /* Set color */
+    font-size: 14px; /* Set font size */
+    font-weight: 480; /* Set font weight */
+    text-transform: capitalize; /* Transform text to capitalize */
+    line-height: 1.5; /* Set line height */
+    margin-bottom: 10px; /* Add bottom margin */
+}
+
+/* Hover effect on footer info paragraph */
+.footer-info p:hover {
+    color: var(--hover-color); /* Change color on hover */
+    transform: scale(1.1); /* Scale on hover */
+}
+
+.footer-info .fifth-info h4{
+    padding-top: 1vh;
+}
+
+
+
+/* Social icon */
+.social-icon i {
+    color: #565656; /* Set color */
+    margin-right: 10px; /* Add right margin */
+    font-size: 20px; /* Set font size */
+    transition: all .42s; /* Add transition effect */
+}
+
+/* Hover effect on social icon */
+.social-icon i:hover {
+    color: var(--hover-color); /* Change color on hover */
+    transform: scale(1.3); /* Scale on hover */
+}
+
+/* End text */
+.end-text {
+    width: 100vw; /* Set width to 100vw */
+    position: relative; /* Set position to relative */
+    left: 50%; /* Position left at 50% */
+    right: 50%; /* Position right at 50% */
+    transform: translateX(-50%); /* Center horizontally */
+    text-align: center; /* Center text */
+    padding: 20px 0; /* Add padding */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    background-color: #004d7a;
+    
+}
+
+/* End text paragraph */
+.end-text p {
+    color: #fff;
+    text-transform: capitalize; /* Transform text to capitalize */
+}

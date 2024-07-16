@@ -1,155 +1,107 @@
-
-
 <!DOCTYPE html>
-<!-- Declaration defines this document as HTML5 -->
 <html lang="en">
-<!-- Root element of the HTML document specifying language as English -->
 <head>
-    <!-- Container for metadata -->
     <meta charset="UTF-8">
-    <!-- Character encoding for the document (UTF-8 is recommended for universal compatibility) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Ensures proper rendering and touch zooming on mobile devices -->
-    <title>Payment</title>
-    <!-- Title of the document shown in browser tab -->
-    <!-- Link to website icon -->
-    <link rel="website icon" type="jpg" href="image/title.png">
-
-    <link rel="stylesheet" href="css/Card.css">
-    <!-- Link to external CSS file for styling -->
+    <title>Shangri-La Payment Receipt</title>
+    <link rel="stylesheet" href="Card.css">
 </head>
 <body>
-    <!-- Container for the visible content of the HTML document -->
     <div class="block">
-        <!-- A div element with class 'block' for styling and layout purposes -->
         <div class="receipt-container">
-            <h1>The Residences@OneGalleFace</h1>
-
-            <img src="ShangrilaPay.jpg">
+            <div class="receipt-header">
+                <div class="receipt-logo">
+                    <img src="https://i.ibb.co/fGLL4nh/0069-HK-BIG.png" alt="Shangri-La Logo" width="150">
+                </div>
+                <div class="receipt-heading">
+                    <h1>Shangri-La Residences at One Galle Face</h1>
+                </div>
+            </div>
+            <div class="receipt-content">
+                <!-- This is where the dynamically generated content will go -->
+            </div>
         </div>
 
         <div class="container">
-            <!-- Container div for the card and form elements -->
             <div class="card-container">
-                <!-- Div to contain the visual representation of the credit/debit card -->
                 <div class="front">
-                    <!-- Represents the front of the card -->
                     <div class="image">
-                        <!-- Container for card-related images -->
-                        <img id="chip" src="chip.png" alt="">
+                        <img src="chip.png" alt="Chip" id="chip">
 
-                        <!-- Image of the chip found on physical cards -->
-                        <img id="visa" src="visa copy.png" alt="">
-                        <!-- Image of the Visa logo -->
+                        <img src="visa copy.png" alt="Visa" id="visa">
                     </div>
-                    <div class="card-number-box">##############</div>
-                    <!-- Placeholder for the card number -->
+                    <div class="card-number-box">
+                        ##############
+                    </div>
                     <div class="flexbox">
-                        <!-- A flex container for layout -->
                         <div class="box">
-                            <!-- Individual container for card holder's name -->
                             <span>Card Holder</span>
-                            <!-- Label -->
                             <div class="card-holder-name">Full Name</div>
-                            <!-- Placeholder for the card holder's name -->
                         </div>
                         <div class="box">
-                            <!-- Individual container for card expiration date -->
                             <span>Expires</span>
-                            <!-- Label -->
                             <div class="expiration">
-                                <!-- Container for expiration date values -->
                                 <span class="exp-month">mm</span>
-                                <!-- Placeholder for the month -->
                                 <span class="exp-year">yy</span>
-                                <!-- Placeholder for the year -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <form action="">
-                <!-- Form for entering card details -->
+            <form>
                 <div class="inputBox">
-                    <!-- Container for an input field -->
                     <span>Card Number</span>
-                    <!-- Label -->
                     <input type="text" maxlength="16" class="card-number-input">
-                    <!-- Input field for the card number -->
                 </div>
-
                 <div class="inputBox">
-                    <!-- Container for an input field -->
                     <span>Card Holder</span>
-                    <!-- Label -->
-                    <input type="text" maxlength="16" class="card-holder-input">
-                    <!-- Input field for the card holder's name -->
+                    <input type="text" class="card-holder-input">
                 </div>
                 <div class="flexbox">
-                    <!-- A flex container for layout of the date and CVV inputs -->
                     <div class="inputBox">
-                        <!-- Container for an input field -->
-                        <span>expiration mm</span>
-                        <!-- Label for expiration month -->
-                        <select name="" id="" class="month-input">
-                            <!-- Dropdown for selecting expiration month -->
-                            <option value="month" selected disabled>month</option>
-                            <!-- Placeholder option -->
-                            <!-- Options for months -->
-                            <option value="01" >01</option>
-                            <option value="02" >02</option>
-                            <option value="03" >03</option>
-                            <option value="04" >04</option>
-                            <option value="05" >05</option>
-                            <option value="06" >06</option>
-                            <option value="07" >07</option>
-                            <option value="08" >08</option>
-                            <option value="09" >09</option>
-                            <option value="10" >10</option>
-                            <option value="11" >11</option>
-                            <option value="12" >12</option>
-                            </select>
-                        </select>
-                    </div>
-
-                    <div class="inputBox">
-                        <!-- Container for an input field -->
-                        <span>expiration yy</span>
-                        <!-- Label for expiration year -->
-                        <select name="" id="" class="year-input">
-                            <!-- Dropdown for selecting expiration year -->
-                            <option value="year" selected disabled>year</option>
-                            <!-- Placeholder option -->
-                            <!-- Options for years -->
-                            <option value="2021" >2021</option>
-                            <option value="2022" >2022</option>
-                            <option value="2023" >2023</option>
-                            <option value="2024" >2024</option>
-                            <option value="2025" >2025</option>
-                            <option value="2026" >2026</option>
-                            <option value="2027" >2027</option>
-                            <option value="2028" >2028</option>
-                            <option value="2029" >2029</option>
-                            <option value="2030" >2030</option>
+                        <span>Expiration MM</span>
+                        <select class="month-input">
+                            <option value="month" selected disabled>Month</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
                     </div>
                     <div class="inputBox">
-                        <!-- Container for an input field -->
-                        <span>cvv</span>
-                        <!-- Label for CVV -->
-                        <input type="text" maxlength="3" class="cvv-input">
-                        <!-- Input field for CVV -->
+                        <span>Expiration YY</span>
+                        <select class="year-input">
+                            <option value="year" selected disabled>Year</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                            <option value="2031">2031</option>
+                            <option value="2032">2032</option>
+                            <option value="2033">2033</option>
+                        </select>
+                    </div>
+                    <div class="inputBox">
+                        <span>CVV</span>
+                        <input type="text" maxlength="4" class="cvv-input">
                     </div>
                 </div>
-
-                <input type="submit" value="Pay" class="submit-btn">
-                <!-- Submit button for the form -->
+                <input type="submit" value="Submit" class="submit-btn">
             </form>
         </div>
     </div>
-
-    <script src="js/Card.js"></script>
-    <!-- Link to external JavaScript file -->
+    <script src="Card.js"></script>
 </body>
 </html>

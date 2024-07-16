@@ -21,7 +21,7 @@
 
 /* Defines CSS custom properties (variables) for use throughout the stylesheet. */
 :root {
-    --main-color: rgb(106, 169, 218); /* Primary color for the site. */
+    --main-color: rgb(255, 140, 159); /* Primary color for the site. */
     --hover-color: rgb(251, 97, 122); /* Hover state color for interactive elements. */
     --text-color: black; /* Default text color. */
     --ash-color: #f3f4f6; /* Light grey color, typically used for backgrounds. */
@@ -87,7 +87,7 @@
 /* Styling for the submit button in the form. */
 .container form .submit-btn {
     width: 100%; /* Makes the button fill its container's width. */
-    background: linear-gradient(45deg, blueviolet, var(--main-color)); /* Adds a gradient background. */
+    background: linear-gradient(45deg, rgb(43, 86, 226), var(--main-color)); /* Adds a gradient background. */
     margin-top: 20px; /* Adds space above the button. */
     padding: 10px; /* Adds padding inside the button. */
     font-size: 20px; /* Increases the font size for better visibility. */
@@ -118,7 +118,7 @@
     width: 100%; /* Fills the width of the parent container. */
     top: 0; /* Aligns the top edge with the parent container's top edge. */
     left: 0; /* Aligns the left edge with the parent container's left edge. */
-    background: linear-gradient(45deg, blueviolet, var(--main-color)); /* Applies a gradient background. */
+    background: linear-gradient(45deg, rgb(43, 67, 226), var(--main-color)); /* Applies a gradient background. */
     border-radius: 20px; /* Rounds the corners. */
     box-shadow: var(--box-shadow); /* Applies a shadow for depth. */
     padding: 20px; /* Adds padding inside the front of the card. */
@@ -206,8 +206,8 @@
 /* Styles for the image within a receipt item, including size, layout, and appearance. */
 .receipt-image {
     flex-shrink: 0; /* Prevents the image from shrinking in the Flexbox layout. */
-    width: 100px; /* Sets a fixed width for the image. */
-    height: 100px; /* Sets a fixed height for the image, maintaining aspect ratio. */
+    width: 150px; /* Increased from 100px to 150px */
+    height: 150px; /* Increased from 100px to 150px */
     display: flex; /* Enables Flexbox layout within the image container. */
     justify-content: center; /* Centers the image horizontally. */
     align-items: center; /* Centers the image vertically. */
@@ -224,4 +224,23 @@
 /* Styles for the details section of each receipt item, placing text to the right of the image. */
 .receipt-details {
     margin-left: 20px; /* Adds space to the left of the details, separating it from the image. */
+}
+
+.receipt-logo {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.receipt-logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.receipt-heading {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    text-transform: none; /* Overrides the global uppercase setting */
 }
