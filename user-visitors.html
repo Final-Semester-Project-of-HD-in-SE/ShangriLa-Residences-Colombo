@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartment Owners Dashboard</title>
+    <link rel="stylesheet" href="css/user-issues.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="js/random-number-generator.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>OneGalleFace Apartments</h1>
+            <nav>
+                <ul>
+                    <li><a href="user-dash.html">Home</a></li>
+                    <li><a href="user-issues.html">Issues</a></li>
+                    <li><a href="Card.html">Payments</a></li>
+                    <li><a href="user-visitors.html">Visitors</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="forms-container">
+            <div class="form-box">
+                <h2>Visitor Information</h2>
+                <form id="visitorForm">
+                    <label for="visitorName">Visitor Name</label>
+                    <input type="text" id="visitorName" name="visitorName" required>
+
+                    <label for="visitorId">Visitor ID Number</label>
+                    <input type="text" id="visitorId" name="visitorId" required>
+
+                    <label for="contactDetails">Visitor Contact Details</label>
+                    <input type="text" id="contactDetails" name="contactDetails" required>
+
+                    <label for="apartmentNumber">Apartment Number</label>
+                    <input type="text" id="apartmentNumber" name="apartmentNumber" required>
+
+                    <label for="stayTime">Stay Time at Apartment</label>
+                    <input type="text" id="stayTime" name="stayTime" required>
+
+                    <button type="submit">Send Request</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 OneGalleFace Apartments. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('visitorForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const visitorName = document.getElementById('visitorName').value;
+            const visitorId = document.getElementById('visitorId').value;
+            const contactDetails = document.getElementById('contactDetails').value;
+            const apartmentNumber = document.getElementById('apartmentNumber').value;
+            const stayTime = document.getElementById('stayTime').value;
+
+            const mailtoLink = `mailto:ThathsaraniB@99x.io?subject=Visitor%20Information&body=Visitor%20Name:%20${visitorName}%0D%0AVisitor%20ID%20Number:%20${visitorId}%0D%0AVisitor%20Contact%20Details:%20${contactDetails}%0D%0AApartment%20Number:%20${apartmentNumber}%0D%0AStay%20Time%20at%20Apartment:%20${stayTime}`;
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+</html>
