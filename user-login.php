@@ -1,3 +1,52 @@
+<?php
+require_once('inc/connection.php');
+
+$loginError = '';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Check in the resident table
+    $query = "SELECT * FROM resident WHERE Rid = ?";
+    $stmt = $connection->prepare($query);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        if ($password == $row['Rpassword']) {
+            header('Location: user-dash.html');
+            exit();
+        } else {
+            $loginError = 'Error: Incorrect password.';
+        }
+    } else {
+        // Check in the hr table
+        $query = "SELECT * FROM hr WHERE Hid = ?";
+        $stmt = $connection->prepare($query);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            if ($password == $row['Hpassword']) {
+                header('Location: Management-Dashboard.html');
+                exit();
+            } else {
+                $loginError = 'Error: Incorrect password.';
+            }
+        } else {
+            $loginError = 'Error: NIC not found.';
+        }
+    }
+
+    $stmt->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +54,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shangri-La Login</title>
     <style>
-        * {
+       * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -107,6 +156,10 @@
         .toggle-form {
             display: none;
         }
+        .error{
+            color: red;
+            padding-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -118,14 +171,17 @@
             </div>
         </div>
         <div class="form-content">
-            <form id="loginForm" class="login-form">
+            <form id="loginForm" class="login-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <div class="title">Welcome Back</div>
                 <div class="input-box">
-                    <input type="email" placeholder="Email" required>
+                    <input type="text" name="email" placeholder="NIC" required>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Password" required>
                 </div>
+                <?php if (!empty($loginError)): ?>
+                    <div class="error"><?php echo $loginError; ?></div>
+                <?php endif; ?>
                 <div class="input-box">
                     <button type="submit" class="button">Login</button>
                 </div>
@@ -139,19 +195,19 @@
             <form id="signupForm" class="signup-form toggle-form">
                 <div class="title">Create Account</div>
                 <div class="input-box">
-                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" name="Rname" placeholder="Full Name" required>
                 </div>
                 <div class="input-box">
-                    <input type="email" placeholder="Email" required>
+                    <input type="text" name="Remail" placeholder="Email" required>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" name="Rpassword" placeholder="Password" required>
                 </div>
                 <div class="input-box">
                     <input type="password" placeholder="Confirm Password" required>
                 </div>
                 <div class="input-box">
-                    <button type="submit" class="button">Sign Up</button>
+                    <button type="submit" class="button" name="resident_signup">Sign Up</button>
                 </div>
                 <div class="sign-up-text">
                     <a href="#" id="showLogin">Already have an account? Login now</a>
