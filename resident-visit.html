@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Pre-Register - Apartment Owner</title>
+    <link rel="stylesheet" href="css/resident-visit.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Visitor Pre-Register</h1>
+            <nav>
+                <ul>
+                    <li><a href="user-dash.html">Home</a></li>
+
+                    <li><a href="user-issues.html">Complaints</a></li>
+                    <li><a href="product.html">Payments</a></li>
+                    <li><a href="resident-visit.html" class="active">Visitors</a></li>
+                    <li><a href="user-prof.html">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="visitor-pre-register">
+            <div class="container">
+                <h2>Pre-Register a Visitor</h2>
+                <form id="visitor-form">
+                    <div class="form-group">
+                        <label for="visitor-name">Visitor Name:</label>
+                        <input type="text" id="visitor-name" placeholder="Enter visitor's name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="visitor-id">Visitor ID:</label>
+                        <input type="text" id="visitor-id" placeholder="Enter visitor's ID number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="visitor-date">Visit Date:</label>
+                        <input type="date" id="visitor-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="visitor-time">Visit Time:</label>
+                        <input type="time" id="visitor-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="visitor-purpose">Purpose of Visit:</label>
+                        <textarea id="visitor-purpose" placeholder="Enter purpose of visit" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 OneGalleFace Apartments. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/resident-visit.js"></script>
+</body>
+</html>
