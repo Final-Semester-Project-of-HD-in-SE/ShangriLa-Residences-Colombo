@@ -25,7 +25,7 @@ $username = $_SESSION['username'];
             <nav>
                 <ul>
                     <li><a href="user-dash.php">Home</a></li>
-                    <li><a href="user-issues.html">Issues</a></li>
+                    <li><a href="user-issues.php">Issues</a></li>
                     <li><a href="product.html">Payments</a></li>
                     <li><a href="resident-visit.html">Visitors</a></li>
                     <li><a href="user-prof.html">Profile</a></li>
