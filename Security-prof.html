@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resident Profile</title>
-    <link rel="stylesheet" href="css/user-prof.css">
+    <title>Security Officer Profile</title>
+    <link rel="stylesheet" href="css/Security-prof.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Resident Profile</h1>
+            <h1>Security Officer Profile</h1>
             <nav>
                 <ul>
-                    <li><a href="user-dash.html">Home</a></li>
-                    <li><a href="#">Issues</a></li>
-                    <li><a href="product.html">Payments</a></li>
-                    <li><a href="#">Visitors</a></li>
-                    <li><a href="#" class="active">Profile</a></li>
+                    <li><a href="Security-dash.html">Home</a></li>
+                    <li><a href="Security-park.html">Parking Management</a></li>
+                    <li><a href="#">Visitor Management</a></li>
+                    <li><a href="Security-prof.html" class="active">Profile</a></li>
                 </ul>
             </nav>
         </div>
@@ -29,35 +28,30 @@
             <div class="container">
                 <div class="profile-header">
                     <div class="profile-image">
-                        <img id="profile-pic" src="images/shanglogo.png" alt="Profile Picture">
-
+                        <img id="profile-pic" src="https://i.ibb.co/Jqnd9X5/larg-Img1-1.jpg" alt="Profile Picture">
                         <input type="file" id="profile-pic-input" accept="image/*" onchange="loadFile(event)">
                     </div>
                     <div class="profile-info">
-                        <h2>Maleesha</h2>
-                        <p>Resident</p>
+                        <h2>Shen </h2>
+                        <p>Security Officer</p>
                     </div>
                 </div>
                 <form class="profile-form">
                     <div class="form-group">
                         <label for="name">Name:</label>
-                        <input type="text" id="name" value="Randy Maleesha">
-                    </div>
-                    <div class="form-group">
-                        <label for="Apartment No">Apartment No:</label>
-                        <input type="tel" id="Apartment No" value="310">
+                        <input type="text" id="name" value="Shen">
                     </div>
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" value="RandyMaleesha@example.com">
+                        <input type="email" id="email" value="icbtcampus@example.com">
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone:</label>
-                        <input type="tel" id="phone" value="+1234567890">
+                        <input type="tel" id="phone" value="091 235 36478">
                     </div>
                     <div class="form-group">
-                        <label for="address">Address:</label>
-                        <input type="text" id="address" value="OneGalleFace, Colombo">
+                        <label for="shift">Shift:</label>
+                        <input type="text" id="shift" value="Night">
                     </div>
                     <button type="submit" class="btn">Save Changes</button>
                 </form>
