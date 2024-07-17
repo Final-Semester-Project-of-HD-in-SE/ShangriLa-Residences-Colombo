@@ -1,3 +1,52 @@
+<?php
+require_once('inc/connection.php');
+
+$error = "";
+$success = "";
+
+// Set SMTP configuration dynamically
+ini_set('SMTP', 'smtp.gmail.com'); // Replace with your SMTP server
+ini_set('smtp_port', 587); // Replace with your SMTP port number
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $visitorName = $_POST['visitorName'];
+    $visitorId = $_POST['visitorId'];
+    $contactDetails = $_POST['contactDetails'];
+    $apartmentNumber = $_POST['apartmentNumber'];
+    $stayTime = $_POST['stayTime'];
+
+    $sql = "INSERT INTO visitors (Vname, Vid, Vcontact, Vtime, Apt_no) VALUES (?, ?, ?, ?, ?)";
+    
+    $stmt = $connection->prepare($sql);
+    $stmt->bind_param("sssss", $visitorName, $visitorId, $contactDetails, $stayTime, $apartmentNumber);
+
+    if ($stmt->execute()) {
+        $success = "Visitor information inserted successfully!";
+   
+        $emailBody = "Visitor Name: $visitorName\n"
+                   . "Visitor ID Number: $visitorId\n"
+                   . "Visitor Contact Details: $contactDetails\n"
+                   . "Apartment Number: $apartmentNumber\n"
+                   . "Stay Time at Apartment: $stayTime\n";
+        
+        $to = "ThathsaraniB@99x.io";
+        $subject = "Visitor Information";
+        $headers = "From: webmaster@example.com"; 
+
+        if (mail($to, $subject, $emailBody, $headers)) {
+            $success .= " Email sent successfully!";
+        } else {
+            $error = "Error sending email.";
+        }
+    } else {
+        $error = "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
+}
+
+$connection->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +77,7 @@
         <section class="forms-container">
             <div class="form-box">
                 <h2>Visitor Information</h2>
-                <form id="visitorForm">
+                <form id="visitorForm" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                     <label for="visitorName">Visitor Name</label>
                     <input type="text" id="visitorName" name="visitorName" required>
 
@@ -46,6 +95,15 @@
 
                     <button type="submit">Send Request</button>
                 </form>
+                
+                <?php
+                if (!empty($success)) {
+                    echo '<p style="color: green;">' . htmlspecialchars($success) . '</p>';
+                }
+                if (!empty($error)) {
+                    echo '<p style="color: red;">' . htmlspecialchars($error) . '</p>';
+                }
+                ?>
             </div>
         </section>
     </main>
@@ -55,19 +113,5 @@
             <p>&copy; 2024 OneGalleFace Apartments. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('visitorForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const visitorName = document.getElementById('visitorName').value;
-            const visitorId = document.getElementById('visitorId').value;
-            const contactDetails = document.getElementById('contactDetails').value;
-            const apartmentNumber = document.getElementById('apartmentNumber').value;
-            const stayTime = document.getElementById('stayTime').value;
-
-            const mailtoLink = `mailto:ThathsaraniB@99x.io?subject=Visitor%20Information&body=Visitor%20Name:%20${visitorName}%0D%0AVisitor%20ID%20Number:%20${visitorId}%0D%0AVisitor%20Contact%20Details:%20${contactDetails}%0D%0AApartment%20Number:%20${apartmentNumber}%0D%0AStay%20Time%20at%20Apartment:%20${stayTime}`;
-            window.location.href = mailtoLink;
-        });
-    </script>
 </body>
 </html>
