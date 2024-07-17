@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('inc/connection.php');
 
 $loginError = '';
@@ -17,7 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if ($password == $row['Rpassword']) {
-            header('Location: user-dash.html');
+            $_SESSION['username'] = $row['Rname'];
+            header('Location: user-dash.php');
             exit();
         } else {
             $loginError = 'Error: Incorrect password.';
@@ -33,7 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             if ($password == $row['Hpassword']) {
-                header('Location: Management-Dashboard.html');
+                $_SESSION['username'] = $row['Rname'];
+                header('Location: Management-Dashboard.php');
                 exit();
             } else {
                 $loginError = 'Error: Incorrect password.';
