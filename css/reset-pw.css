@@ -1,0 +1,96 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Container */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('https://i.ibb.co/4FCtt4Z/shangri-la-residences-debuts-in-yangon-myanmar.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    color: #004d7a;
+    font-weight: 700;
+}
+
+/* Forgot Password Section */
+.forgot-password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+}
+
+.forgot-password h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #004d7a;
+    font-weight: 700;
+}
+
+#forgot-password-form .form-group {
+    margin-bottom: 20px;
+}
+
+#forgot-password-form .form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+#forgot-password-form .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #004d7a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.btn:hover {
+    background-color: #003366;
+}
+
+/* Footer */
+footer {
+    background-color: #004d7a;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}

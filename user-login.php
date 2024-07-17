@@ -192,7 +192,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <a href="#" id="showSignup">Need to register?</a>
                 </div>
                 <div class="sign-up-text">
-                    <a href="#">Forgot password?</a>
+                    <a href="reset-pw.html">Forgot password?</a>
+
                 </div>
             </form>
             <form id="signupForm" class="signup-form toggle-form">
