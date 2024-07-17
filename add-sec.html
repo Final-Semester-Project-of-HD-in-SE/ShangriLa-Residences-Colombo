@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Security Officer - Management Dashboard</title>
+    <link rel="stylesheet" href="css/add-sec.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Add New Security Officer</h1>
+            <nav>
+                <ul>
+                    <li><a href="Management-Dashboard.html">Home</a></li>
+                    <li><a href="#">Complaints</a></li>
+                    <li><a href="#">Payments</a></li>
+                    <li><a href="#">Visitors</a></li>
+                    <li><a href="add-sec.html" class="active">Security Officers</a></li>
+                    <li><a href="">Reports</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="add-security-officer">
+            <div class="container">
+                <h2>Register New Security Officer</h2>
+                <form id="officer-form">
+                    <div class="form-group">
+                        <label for="officer-name">Officer Name:</label>
+                        <input type="text" id="officer-name" placeholder="Enter officer's name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="officer-id">Officer ID:</label>
+                        <input type="text" id="officer-id" placeholder="Enter officer's ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="officer-password">Officer Password:</label>
+                        <input type="password" id="officer-password" placeholder="Enter officer's password" required>
+                    </div>
+                    <button type="submit" class="btn">Register Officer</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 OneGalleFace Apartments. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/add-sec.js"></script>
+</body>
+</html>
