@@ -1,3 +1,35 @@
+<?php
+session_start();
+require_once('inc/connection.php');
+
+if (!isset($_SESSION['username'])) {
+    header('Location: login.php');
+    exit();
+}
+
+// Retrieve additional session data
+$username = $_SESSION['username'];
+$dp = $_SESSION['Rpic'];
+$currentMonth = date('F'); // Get the current month's name
+$total = isset($_GET['total']) ? $_GET['total'] : 0;
+// Prepare and execute the database query
+$sql = "INSERT INTO payment (Rname, Rid, Balance, RMonth) VALUES (?, ?, ?, ?)";
+$stmt = $connection->prepare($sql);
+
+// Bind parameters and execute statement
+$stmt->bind_param("ssis", $username, $dp, $total, $currentMonth);
+
+if ($stmt->execute()) {
+    echo "";
+} else {
+    echo "Error: " . $stmt->error;
+}
+
+$stmt->close();
+$connection->close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,6 +134,6 @@
             </form>
         </div>
     </div>
-    <script src="Card.js"></script>
+    <script src="Cards.js"></script>
 </body>
 </html>

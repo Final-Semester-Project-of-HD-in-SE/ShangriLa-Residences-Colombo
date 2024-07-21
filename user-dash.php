@@ -2,11 +2,12 @@
 session_start();
 
 if (!isset($_SESSION['username'])) {
-    header('Location: login.php'); // Redirect to login page if not logged in
+    header('Location: login.php'); 
     exit();
 }
 
 $username = $_SESSION['username'];
+$dp = $_SESSION['Rpic'];
 ?>
 
 <!DOCTYPE html>
@@ -15,24 +16,87 @@ $username = $_SESSION['username'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apartment Owners Dashboard</title>
+    <style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 30px; 
+    right: 30px; 
+}
+
+.profile-image {
+    width: 100px; 
+    height: 100px; 
+    overflow: hidden; 
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ddd; 
+    background-color: #f0f0f0; 
+}
+
+.profile-image img {
+    width: 100%;
+    height: auto;
+}
+
+.logout-link {
+    color: yellow; 
+    text-decoration: none; 
+    margin-top: 10px; 
+    font-weight: bold; 
+}
+
+.logout-link:hover {
+    text-decoration: underline; 
+}
+
+.logout-link i {
+            font-size: 20px; 
+        }
+header {
+    position: relative;
+}
+
+</style>
+
     <link rel="stylesheet" href="css/user-dash.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Shangri-La Residences</h1>
-            <nav>
-                <ul>
-                    <li><a href="user-dash.php">Home</a></li>
-                    <li><a href="user-issues.php">Issues</a></li>
-                    <li><a href="product.html">Payments</a></li>
-                    <li><a href="user-visitors.php">Visitors</a></li>
-                    <li><a href="user-prof.html">Profile</a></li>
-                </ul>
-            </nav>
+<header>
+    <div class="container">
+        <h1>Shangri-La Residences</h1>
+        <nav>
+            <ul>
+                <li><a href="user-dash.php">Home</a></li>
+                <li><a href="user-issues.php">Issues</a></li>
+                <li><a href="product.php">Payments</a></li>
+                <li><a href="user-visitors.php">Visitors</a></li>
+                <li><a href="user-prof.php">Profile</a></li>
+            </ul>
+        </nav>
+        <div class="profile-container">
+            <div class="profile-image">
+                <img id="profile-pic" src="<?php echo htmlspecialchars('./uploads/' . $dp); ?>" alt="Profile Picture">
+            </div>
+            <a href="index.html" class="logout-link">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
         </div>
-    </header>
+    </div>
+</header>
+
 
     <main>
         <section class="hero">

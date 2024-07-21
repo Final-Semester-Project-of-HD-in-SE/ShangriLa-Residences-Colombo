@@ -4,10 +4,6 @@ require_once('inc/connection.php');
 $error = "";
 $success = "";
 
-// Set SMTP configuration dynamically
-ini_set('SMTP', 'smtp.gmail.com'); // Replace with your SMTP server
-ini_set('smtp_port', 587); // Replace with your SMTP port number
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $visitorName = $_POST['visitorName'];
     $visitorId = $_POST['visitorId'];
@@ -18,34 +14,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO visitors (Vname, Vid, Vcontact, Vtime, Apt_no) VALUES (?, ?, ?, ?, ?)";
     
     $stmt = $connection->prepare($sql);
-    $stmt->bind_param("sssss", $visitorName, $visitorId, $contactDetails, $stayTime, $apartmentNumber);
+    if ($stmt) {
+        $stmt->bind_param("sssss", $visitorName, $visitorId, $contactDetails, $stayTime, $apartmentNumber);
 
-    if ($stmt->execute()) {
-        $success = "Visitor information inserted successfully!";
-   
-        $emailBody = "Visitor Name: $visitorName\n"
-                   . "Visitor ID Number: $visitorId\n"
-                   . "Visitor Contact Details: $contactDetails\n"
-                   . "Apartment Number: $apartmentNumber\n"
-                   . "Stay Time at Apartment: $stayTime\n";
-        
-        $to = "ThathsaraniB@99x.io";
-        $subject = "Visitor Information";
-        $headers = "From: webmaster@example.com"; 
-
-        if (mail($to, $subject, $emailBody, $headers)) {
-            $success .= " Email sent successfully!";
+        if ($stmt->execute()) {
+            $success = "Visitor information inserted successfully!";
         } else {
-            $error = "Error sending email.";
+            $error = "Error: " . $stmt->error;
         }
+
+        $stmt->close();
     } else {
-        $error = "Error: " . $stmt->error;
+        $error = "Error preparing statement: " . $connection->error;
     }
 
-    $stmt->close();
-}
+    $connection->close();
 
-$connection->close();
+    if (empty($error)) {
+        // Prepare the mailto link
+        $mailtoLink = "mailto:ThathsaraniB@99x.io?subject=Visitor%20Information&body=" .
+                      "Visitor%20Name:%20" . urlencode($visitorName) . "%0D%0A" .
+                      "Visitor%20ID%20Number:%20" . urlencode($visitorId) . "%0D%0A" .
+                      "Visitor%20Contact%20Details:%20" . urlencode($contactDetails) . "%0D%0A" .
+                      "Apartment%20Number:%20" . urlencode($apartmentNumber) . "%0D%0A" .
+                      "Stay%20Time%20at%20Apartment:%20" . urlencode($stayTime);
+        // Redirect to the mailto link
+        header("Location: " . $mailtoLink);
+        exit();
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

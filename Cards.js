@@ -140,7 +140,7 @@ const handleFormSubmission = (event) => {
       
       // Redirect to home.html after a short delay (e.g., 2 seconds)
       setTimeout(() => {
-          window.location.href = "user-dash.html";
+          window.location.href = "user-dash.php";
 
       }, 2000);
   } else {

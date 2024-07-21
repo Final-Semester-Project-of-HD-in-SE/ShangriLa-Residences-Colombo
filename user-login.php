@@ -19,6 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         if ($password == $row['Rpassword']) {
             $_SESSION['username'] = $row['Rname'];
+            $_SESSION['rid'] = $row['Rid'];
+            $_SESSION['Rpic'] = $row['Rprof'];
             header('Location: user-dash.php');
             exit();
         } else {
