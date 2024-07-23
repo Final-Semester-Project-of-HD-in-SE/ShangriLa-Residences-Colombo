@@ -27,6 +27,7 @@ if (!isset($_SESSION['username'])) {
                     <li><a href="Management-visitors.html">Visitors</a></li>
                     <li><a href="add-sec.html">Add Security Officers</a></li> 
                     <li><a href="Management-reports.html">Reports</a></li>
+                    <li><a href="hr-prof.php">Profile</a></li>
                 </ul>
             </nav>
         </div>

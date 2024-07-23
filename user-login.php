@@ -36,6 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = $result->fetch_assoc();
             if ($password == $row['Hpassword']) {
                 $_SESSION['username'] = $row['Hname'];
+                $_SESSION['hid'] = $row['Hid'];
+                $_SESSION['Hpic'] = $row['Hprof'];
                 header('Location: Management-Dashboard.php');
                 exit();
             } else {
