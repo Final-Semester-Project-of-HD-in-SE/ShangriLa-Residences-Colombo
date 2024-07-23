@@ -4,6 +4,8 @@ if (!isset($_SESSION['username'])) {
     header('Location: login.php'); // Redirect to login if not logged in
     exit();
 }
+$username = $_SESSION['username'];
+$dp = $_SESSION['Hpic'];
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +16,60 @@ if (!isset($_SESSION['username'])) {
     <title>Management Team Dashboard</title>
     <link rel="stylesheet" href="css/ManagementDash.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 30px; 
+    right: 30px; 
+}
+
+.profile-image {
+    width: 100px; 
+    height: 100px; 
+    overflow: hidden; 
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ddd; 
+    background-color: #f0f0f0; 
+}
+
+.profile-image img {
+    width: 100%;
+    height: auto;
+}
+
+.logout-link {
+    color: yellow; 
+    text-decoration: none; 
+    margin-top: 10px; 
+    font-weight: bold; 
+}
+
+.logout-link:hover {
+    text-decoration: underline; 
+}
+
+.logout-link i {
+            font-size: 20px; 
+        }
+header {
+    position: relative;
+}
+
+</style>
 <body>
     <header>
         <div class="container">
@@ -30,6 +85,14 @@ if (!isset($_SESSION['username'])) {
                     <li><a href="hr-prof.php">Profile</a></li>
                 </ul>
             </nav>
+            <div class="profile-container">
+            <div class="profile-image">
+                <img id="profile-pic" src="<?php echo htmlspecialchars('./uploads/' . $dp); ?>" alt="Profile Picture">
+            </div>
+            <a href="index.html" class="logout-link">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
         </div>
     </header>
 
