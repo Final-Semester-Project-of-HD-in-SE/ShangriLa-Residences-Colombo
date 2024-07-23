@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header('Location: login.php'); // Redirect to login if not logged in
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Management Team Dashboard</title>
     <link rel="stylesheet" href="css/ManagementDash.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,21 +21,12 @@
             <h1>Management Team Dashboard</h1>
             <nav>
                 <ul>
-                    <li><a href="Management-Dashboard.html">Home</a></li>
-
+                    <li><a href="Management-Dashboard.php">Home</a></li>
                     <li><a href="Management-complain.html">Complaints</a></li>
-
                     <li><a href="Management-payment.html">Payments</a></li>
-
                     <li><a href="Management-visitors.html">Visitors</a></li>
-
                     <li><a href="add-sec.html">Add Security Officers</a></li> 
-
                     <li><a href="Management-reports.html">Reports</a></li>
-
-                
-
-
                 </ul>
             </nav>
         </div>
@@ -37,7 +35,7 @@
     <main>
         <div class="container">
             <section class="overview">
-                <h2>Welcome, Management Team</h2>
+                <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></h2>
                 <p>Monitor and manage resident complaints, payments, visitors, and more.</p>
                 <img src="https://i.ibb.co/fDfPsZt/img-a1-copy.png" alt="About Image">
             </section>

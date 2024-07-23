@@ -8,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Check in the resident table
     $query = "SELECT * FROM resident WHERE Rid = ?";
     $stmt = $connection->prepare($query);
     $stmt->bind_param("s", $email);
@@ -27,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $loginError = 'Error: Incorrect password.';
         }
     } else {
-        // Check in the hr table
         $query = "SELECT * FROM hr WHERE Hid = ?";
         $stmt = $connection->prepare($query);
         $stmt->bind_param("s", $email);
@@ -37,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             if ($password == $row['Hpassword']) {
-                $_SESSION['username'] = $row['Rname'];
+                $_SESSION['username'] = $row['Hname'];
                 header('Location: Management-Dashboard.php');
                 exit();
             } else {
