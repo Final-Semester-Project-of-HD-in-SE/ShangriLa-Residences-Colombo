@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $row['Rname'];
             $_SESSION['rid'] = $row['Rid'];
             $_SESSION['Rpic'] = $row['Rprof'];
+            $_SESSION['Rcon'] = $row['Rcon'];
             header('Location: user-dash.php');
             exit();
         } else {

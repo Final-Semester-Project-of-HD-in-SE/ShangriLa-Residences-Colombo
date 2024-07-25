@@ -69,6 +69,9 @@ header {
     position: relative;
 }
 
+.nav-payments {
+            color: yellow; 
+        }
 </style>
 <body>
     <header>
@@ -76,12 +79,11 @@ header {
             <h1>Management Team Dashboard</h1>
             <nav>
                 <ul>
-                    <li><a href="Management-Dashboard.php">Home</a></li>
-                    <li><a href="Management-complain.html">Complaints</a></li>
-                    <li><a href="Management-payment.html">Payments</a></li>
-                    <li><a href="Management-visitors.html">Visitors</a></li>
-                    <li><a href="add-sec.html">Add Security Officers</a></li> 
-                    <li><a href="Management-reports.html">Reports</a></li>
+                    <li><a href="Management-Dashboard.php" class="nav-payments">Home</a></li>
+                    <li><a href="Management-complain.php">Complaints</a></li>
+                    <li><a href="Management-payment.php">Payments</a></li>
+                    <li><a href="Management-visitors.php">Visitors</a></li>
+                    <li><a href="add-sec.php">Add Security Officers</a></li> 
                     <li><a href="hr-prof.php">Profile</a></li>
                 </ul>
             </nav>
