@@ -174,6 +174,9 @@ if (isset($_POST['print_all_payments'])) {
         width: 50px;
         height: 50px;
     }
+    nav ul li a.active {
+            color: yellow;
+        }
     </style>
 </head>
 <body>
@@ -185,11 +188,12 @@ if (isset($_POST['print_all_payments'])) {
             <div class="nav-row" style="display: flex; flex-direction: row; padding-bottom: 35px;">
                 <nav>
                     <ul>
-                        <li><a href="user-dash.php">Home</a></li>
-                        <li><a href="user-issues.php">Issues</a></li>
-                        <li><a href="product.php">Payments</a></li>
-                        <li><a href="user-visitors.php">Visitors</a></li>
-                        <li><a href="user-prof.php">Profile</a></li>
+                    <li><a href="user-dash.php">Home</a></li>
+                    <li><a href="user-issues.php">Issues</a></li>
+                    <li><a href="product.php" class="active">Payments</a></li>
+                    <li><a href="user-visitors.php">Visitors</a></li>
+                    <li><a href="user-parkings.php">Parkings</a></li>
+                    <li><a href="user-prof.php">Profile</a></li>
                     </ul>
                 </nav>
                 <div class="profile-container">

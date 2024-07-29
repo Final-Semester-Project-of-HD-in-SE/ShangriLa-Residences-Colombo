@@ -161,9 +161,10 @@ $result = $connection->query($sql);
                 <ul>
                 <li><a href="Management-Dashboard.php">Home</a></li>
                     <li><a href="Management-complain.php">Complaints</a></li>
-                    <li><a href="Management-payment.php"  class="nav-payments">Payments</a></li>
+                    <li><a href="Management-payment.php" class="nav-payments">Payments</a></li>
                     <li><a href="Management-visitors.php">Visitors</a></li>
                     <li><a href="add-sec.php">Add Security Officers</a></li> 
+                    <li><a href="Management-parking.php">Parkings</a></li> 
                     <li><a href="hr-prof.php">Profile</a></li>
                 </ul>
             </nav>

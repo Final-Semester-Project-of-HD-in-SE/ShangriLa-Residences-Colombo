@@ -60,11 +60,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1>OneGalleFace Apartments</h1>
             <nav>
                 <ul>
-                    <li><a href="user-dash.html">Home</a></li>
-                    <li><a href="user-issues.html">Issues</a></li>
-                    <li><a href="Card.html">Payments</a></li>
-                    <li><a href="user-visitors.html">Visitors</a></li>
-                    <li><a href="#">Profile</a></li>
+                <li><a href="user-dash.php">Home</a></li>
+                <li><a href="user-issues.php">Issues</a></li>
+                <li><a href="product.php">Payments</a></li>
+                <li><a href="user-visitors.php">Visitors</a></li>
+                <li><a href="user-parkings.php">Parkings</a></li>
+                <li><a href="user-prof.php">Profile</a></li>
                 </ul>
             </nav>
         </div>

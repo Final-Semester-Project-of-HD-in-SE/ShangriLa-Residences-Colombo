@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="button input-box">
                             <input type="submit" name="resident_signup" value="Submit">
                         </div>
-                        <div class="text sign-up-text"><label for="flip">I need to register as a resident</label></div>
+                        <div class="text sign-up-text"><label for="flip">I need to register as a HR</label></div>
                         <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
                     </div>
                 </form>

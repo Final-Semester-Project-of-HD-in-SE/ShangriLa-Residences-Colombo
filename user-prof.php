@@ -95,11 +95,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1>Resident Profile</h1>
             <nav>
                 <ul>
-                    <li><a href="user-dash.php">Home</a></li>
-                    <li><a href="user-issues.php">Issues</a></li>
-                    <li><a href="product.php">Payments</a></li>
-                    <li><a href="resident-visit.php">Visitors</a></li>
-                    <li><a href="user-prof.php" class="active">Profile</a></li>
+                <li><a href="user-dash.php">Home</a></li>
+                <li><a href="user-issues.php">Issues</a></li>
+                <li><a href="product.php">Payments</a></li>
+                <li><a href="user-visitors.php">Visitors</a></li>
+                <li><a href="user-parkings.php">Parkings</a></li>
+                <li><a href="user-prof.php" class="active">Profile</a></li>
                 </ul>
             </nav>
         </div>

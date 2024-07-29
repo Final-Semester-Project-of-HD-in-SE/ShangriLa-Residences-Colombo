@@ -219,6 +219,9 @@ $connection->close();
         .suggestion-table {
             border: 2px solid #28a745;
         }
+        nav ul li a.active {
+            color: yellow;
+        }
     </style>
 </head>
 <body>
@@ -227,11 +230,12 @@ $connection->close();
             <h1>OneGalleFace Apartments</h1>
             <nav>
                 <ul>
-                    <li><a href="user-dash.php">Home</a></li>
-                    <li><a href="user-issues.php">Issues</a></li>
-                    <li><a href="product.html">Payments</a></li>
-                    <li><a href="user-visitors.html">Visitors</a></li>
-                    <li><a href="user-prof.html">Profile</a></li>
+                <li><a href="user-dash.php">Home</a></li>
+                <li><a href="user-issues.php" class="active">Issues</a></li>
+                <li><a href="product.php">Payments</a></li>
+                <li><a href="user-visitors.php">Visitors</a></li>
+                <li><a href="user-parkings.php">Parkings</a></li>
+                <li><a href="user-prof.php">Profile</a></li>
                 </ul>
             </nav>
             <div class="profile-container">

@@ -45,14 +45,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $loginError = 'Error: Incorrect password.';
             }
         } else {
-            $loginError = 'Error: NIC not found.';
+            $query = "SELECT * FROM secuirtyoff WHERE SecId = ?";
+            $stmt = $connection->prepare($query);
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                if ($password == $row['Spass']) {
+                    $_SESSION['username'] = $row['Sname'];
+                    $_SESSION['secid'] = $row['SecId'];
+                    $_SESSION['Scon'] = $row['Scon'];
+                    header('Location: Security-dash.php');
+                    exit();
+                } else {
+                    $loginError = 'Error: Incorrect password.';
+                }
+            } else {
+                $loginError = 'Error: NIC not found.';
+            }
         }
     }
 
     $stmt->close();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

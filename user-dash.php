@@ -66,7 +66,9 @@ $dp = $_SESSION['Rpic'];
 header {
     position: relative;
 }
-
+nav ul li a.active {
+            color: yellow;
+        }
 </style>
 
     <link rel="stylesheet" href="css/user-dash.css">
@@ -79,10 +81,11 @@ header {
         <h1>Shangri-La Residences</h1>
         <nav>
             <ul>
-                <li><a href="user-dash.php">Home</a></li>
+                <li><a href="user-dash.php" class="active">Home</a></li>
                 <li><a href="user-issues.php">Issues</a></li>
                 <li><a href="product.php">Payments</a></li>
                 <li><a href="user-visitors.php">Visitors</a></li>
+                <li><a href="user-parkings.php">Parkings</a></li>
                 <li><a href="user-prof.php">Profile</a></li>
             </ul>
         </nav>

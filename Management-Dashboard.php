@@ -79,11 +79,12 @@ header {
             <h1>Management Team Dashboard</h1>
             <nav>
                 <ul>
-                    <li><a href="Management-Dashboard.php" class="nav-payments">Home</a></li>
+                <li><a href="Management-Dashboard.php"  class="nav-payments">Home</a></li>
                     <li><a href="Management-complain.php">Complaints</a></li>
                     <li><a href="Management-payment.php">Payments</a></li>
                     <li><a href="Management-visitors.php">Visitors</a></li>
                     <li><a href="add-sec.php">Add Security Officers</a></li> 
+                    <li><a href="Management-parking.php">Parkings</a></li> 
                     <li><a href="hr-prof.php">Profile</a></li>
                 </ul>
             </nav>
